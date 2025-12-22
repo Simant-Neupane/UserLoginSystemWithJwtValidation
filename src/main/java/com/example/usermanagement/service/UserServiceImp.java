@@ -48,7 +48,6 @@ public class UserServiceImp implements UserService{
     public UserResponse updateUser(Long id, UserRequest requestDto){
         User existingUser = repo.findById(id).orElse(null);
         if(existingUser != null){
-            existingUser.setId(requestDto.getId());
             existingUser.setUserName(requestDto.getUserName());
             existingUser.setEmail(requestDto.getEmail());
             existingUser.setPassword(requestDto.getPassword());
