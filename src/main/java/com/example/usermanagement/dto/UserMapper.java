@@ -32,5 +32,14 @@ public class UserMapper {
         user.setUpdatedDate(requestDto.getUpdatedDate());
         return user;
     }
+    public UserProfile toUserProfileDto(User user){
+        UserProfile userProfile = new UserProfile();
+        userProfile.setId(user.getId());
+        userProfile.setUserName(user.getUserName());
+        userProfile.setEmail(user.getEmail());
+        userProfile.setCreatedDate(user.getCreatedDate());
+        userProfile.setUpdatedDate(user.getUpdatedDate());
+        return userProfile;
+    }
 
 }

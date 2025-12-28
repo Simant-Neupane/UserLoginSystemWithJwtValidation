@@ -2,7 +2,7 @@ package com.example.usermanagement;
 
 import com.example.usermanagement.dto.UserResponse;
 import com.example.usermanagement.repository.UserRepository;
-import com.example.usermanagement.service.UserServiceImp;
+import com.example.usermanagement.serviceimplementation.UserServiceImp;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

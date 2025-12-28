@@ -2,7 +2,7 @@ package com.example.usermanagement.controller;
 
 import com.example.usermanagement.dto.UserRequest;
 import com.example.usermanagement.dto.UserResponse;
-import com.example.usermanagement.service.UserServiceImp;
+import com.example.usermanagement.serviceimplementation.UserServiceImp;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

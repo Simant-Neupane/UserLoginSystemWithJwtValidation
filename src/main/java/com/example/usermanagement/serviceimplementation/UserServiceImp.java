@@ -1,16 +1,17 @@
-package com.example.usermanagement.service;
+package com.example.usermanagement.serviceimplementation;
 
 import com.example.usermanagement.model.User;
 import com.example.usermanagement.dto.UserMapper;
 import com.example.usermanagement.dto.UserRequest;
 import com.example.usermanagement.dto.UserResponse;
 import com.example.usermanagement.repository.UserRepository;
+import com.example.usermanagement.service.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class UserServiceImp implements UserService{
+public class UserServiceImp implements UserService {
 
     private final UserRepository repo;
     private final UserMapper mapper;

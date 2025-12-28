@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDateTime;
 import java.util.LinkedHashMap;
@@ -25,14 +26,14 @@ public class GlobalExceptionHandler {
 
         return ResponseEntity.badRequest().body(error);
     }
-    @ExceptionHandler(BadCredentialsException.class)
-    public ResponseEntity<Map<String, Object>> handleBadCredentialsException(BadCredentialsException ex,
+    @ExceptionHandler(ResponseStatusException.class)
+    public ResponseEntity<Map<String, Object>> handleResponseStatusException(ResponseStatusException ex,
                                                     HttpServletRequest request){
         Map<String, Object> error = new LinkedHashMap<>();
         error.put("timestamp", LocalDateTime.now());
-        error.put("status", 401);
+        error.put("status", ex.getStatusCode().value());
         error.put("error", "Unauthorized");
-        error.put("message", ex.getMessage());
+        error.put("message", ex.getReason());
         error.put("path", request.getRequestURI());
 
         return ResponseEntity.badRequest().body(error);
